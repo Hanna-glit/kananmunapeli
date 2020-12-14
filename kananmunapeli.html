@@ -1,0 +1,41 @@
+<!doctype html>
+
+<head>
+    <title>Morjesta</title>
+    <style>
+        #kananmuna {
+            max-width: 100vw;
+            max-height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="tulostaulu">0</h1>
+    <img id="kananmuna" onclick="kananmunanKlikkaus()" src="kananmuna-ehja.jpg" />
+    <script>
+
+        let laskurinLukema = 0;
+
+        let kananmunaElem = document.getElementById("kananmuna")
+        let tulostauluElem = document.getElementById("tulostaulu")
+
+        function kananmunanKlikkaus() {
+            laskurinLukema = laskurinLukema + 1
+            console.log(laskurinLukema)
+
+            // päivitetään klikkausten määrä käyttöliittymään
+            tulostauluElem.innerHTML = laskurinLukema
+
+            if(laskurinLukema > 5) {
+                kananmunaElem.src = "kananmuna-rikki.jpg" 
+                laskurinLukema = 0
+                alert("Voitit pelin")
+            } 
+            else {
+                kananmunaElem.src = "kananmuna-ehja.jpg"
+            }
+        }
+
+    </script>
+</body>
